@@ -33,7 +33,10 @@ public class Inventory : MonoBehaviour
                 {
                     items[i] = itemToAdd;
                     itemImages[i].sprite = itemToAdd.sprite;
+                    itemImages[i].name = itemToAdd.name;
                     itemImages[i].enabled = true;
+                GameObject gg = new GameObject();
+                gg.transform.parent = itemImages[i].transform;
                     //if (i < 4)
                     //{
                     //    shades[i].enabled = true;

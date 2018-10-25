@@ -13,8 +13,9 @@ public class BagSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Text itemCountText;
     public Text itemInfoText;
     private Item item = null;
-    private int count = 0;
+    private int count = 1;
     private string item_ID;
+    public Image countBG;
 
     public void Awake()
     {
@@ -36,6 +37,24 @@ public class BagSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void addCount()
     {
         count++;
+    }
+
+    public void showCount()
+    {
+        if (count > 1)
+        {
+            itemCountText.text = count.ToString();
+            itemCountText.enabled = true;
+            countBG.enabled = true;
+        } else
+        {
+            countBG.enabled = false;
+        }
+    }
+
+    public int getCount()
+    {
+        return count;
     }
 
     public void setSlotImage(Sprite sprite)

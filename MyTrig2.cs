@@ -16,6 +16,8 @@ public class MyTrig2 : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         string a = ss.GetComponentInChildren<Text>().text;
         //Debug.Log(a);
         string info = itemInitialize ._instance.getItemInfoString(a);
+        string info2 = ss.GetComponent<Image>().name;
+        Debug.Log("the image name is: " + info2);
         Debug.Log(info);
         obj.SetActive(true);
     }
